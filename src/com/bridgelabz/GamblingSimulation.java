@@ -4,9 +4,8 @@ public class GamblingSimulation {
     public static int stakeOfEveryDay = 100;
     public static int winDays = 0;
     public static int lossDays = 0;
-    public static final int Bet_Every_Game = 1;
-    public static final int Days = 20;
-    public static final int Win = 1;
+    public static final int DAYS = 20;
+    public static final int WIN = 1;
 
     public static void main(String[] args) {
         System.out.println("Welcome the Gambling Simulation Problem");
@@ -20,11 +19,11 @@ public class GamblingSimulation {
     }
 
     public static void playGame() {
-        for (int i = 1; i <= Days; i++) {
+        for (int i = 1; i <= DAYS; i++) {
             int handCash = stakeOfEveryDay;
             while (handCash > 50 && handCash < 150) {
                 int bit = (int) (Math.random() * (2) + 1);
-                if (bit == Win) {
+                if (bit == WIN) {
                     System.out.println("You are win");
                     handCash++;
                 } else {
