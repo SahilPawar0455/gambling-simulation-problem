@@ -10,6 +10,13 @@ public class GamblingSimulation {
     public static void main(String[] args) {
         System.out.println("Welcome the Gambling Simulation Problem");
         playGame();
+        GamblingSimulation gamblingSimulation = new GamblingSimulation();      // creating the object
+        gamblingSimulation.winLossDays();
+    }
+
+    public void winLossDays() {
+        System.out.println("luckiest day in this month is = "+winDays);
+        System.out.println("unluckiest day in this month is = "+lossDays);
     }
 
     public static void playGame() {
@@ -29,7 +36,7 @@ public class GamblingSimulation {
                     perDayLoss++;
                 }
                 System.out.println("Now your stake is " + handCash);
-                System.out.println("Your Have Win "+perDayWin+" bet and you have loss "+perDayLoss+" bet");
+                System.out.println("Your Have Win " + perDayWin + " bet and you have loss " + perDayLoss + " bet");
             }
             if (handCash == 50) {
                 System.out.println("You have loss 50% stake");
