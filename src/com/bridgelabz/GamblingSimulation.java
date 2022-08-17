@@ -41,7 +41,9 @@ public class GamblingSimulation {
             int handCash = stakeOfEveryDay;
             int perDayWin = 0;
             int perDayLoss = 0;
-            while (handCash > 50 && handCash < 150) {
+            int stakeOf50PercentageLoss = stakeOfEveryDay / 2;
+            int stakeOf50PercentageWin = stakeOfEveryDay + stakeOf50PercentageLoss;
+            while (handCash > stakeOf50PercentageLoss && handCash < stakeOf50PercentageWin) {
                 int bit = (int) (Math.random() * (2) + 1);
                 if (bit == WIN) {
                     System.out.println("You are win");
@@ -63,11 +65,10 @@ public class GamblingSimulation {
                 lossDays++;
             }
         }
-        GamblingSimulation gamblingSimulation = new GamblingSimulation();      // creating the object
-        gamblingSimulation.winLossDays();
+        winLossDays();
     }
 
-    public void winLossDays() {
+    public static void winLossDays() {
         System.out.println("luckiest day in this month is = " + winDays);
         System.out.println("unluckiest day in this month is = " + lossDays);
     }
